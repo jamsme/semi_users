@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Edit User {{user.id}}</title>
+    <style>
+    body {
+        padding-top: 100px;
+    }
+    #container {
+        margin: 0 auto;
+        width: 970px;
+    }
+    h5 {
+        margin: 0;
+    }
+    form {
+        margin-bottom: 10px;
+    }
+    input {
+        display: block;
+        margin: 2px 0 5px 0;
+    }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>Edit User {{user.id}}</h2>
+        <form action="/update/{{user.id}}" method='POST'>
+            {% csrf_token %}
+            <h5>Name:</h5>
+            <input type="text" name="name" value="{{user.name}}">
+            <h5>Email:</h5>
+            <input type="text" name="email" value="{{user.email}}">
+            <input type="submit" value="Update">
+        </form>
+        <a href="/">Go Back</a>
+    </div>
+</body>
+</html>

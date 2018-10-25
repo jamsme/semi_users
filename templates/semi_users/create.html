@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>User New</title>
+    <style>
+        body {
+            padding-top: 100px;
+        }
+        #container {
+            margin: 0 auto;
+            width: 970px;
+        }
+        h5 {
+            margin: 0;
+        }
+        form {
+            margin-bottom: 10px;
+        }
+        input {
+            display: block;
+            margin: 2px 0 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        <h2>Add a new user</h2>
+        <form action="/add" method='POST'>
+            {% csrf_token %}
+            <h5>First Name:</h5>
+            <input type="text" name="name">
+            <h5>Email:</h5>
+            <input type="text" name="email">
+            <input type="submit" value="Create">
+        </form>
+        <a href="/">Go Back</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Users Show</title>
+    <style>
+    body {
+        padding-top: 100px;
+    }
+    #container {
+        margin: 0 auto;
+        width: 970px;
+    }
+    h4 {
+        margin: 10px;
+    }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>User {{user.id}}</h2>
+        <h4>Name: {{user.name}}</h4>
+        <h4>Email: {{user.email}}</h5>
+        <h4>Created At: {{user.created_at}}</h4>
+        <a href="/edit/{{user.id}}">Edit</a>
+        <a href="/delete/{{user.id}}">Delete</a>
+        <a href="/">Back</a>
+    </div>
+</body>
+</html>

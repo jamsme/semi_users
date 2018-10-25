@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Users Index</title>
+    {% load static %}
+    <link rel= "stylesheet" href= "{% static 'semi_users/css/style.css' %}">
+</head>
+<body>
+    <div id="container">
+        <h2>Users</h2>
+        <table>
+            <tr>
+                <th>id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Created At</th>
+                <th>Actions</th>
+            </tr>
+            {% for x in user %}
+                <tr>
+                    <td>{{x.id}}</td>
+                    <td><a href="/show/{{x.id}}">{{x.name}}</a></td>
+                    <td>{{x.email}}</td>
+                    <td>{{x.created_at}}</td>
+                    <td><a href="/show/{{x.id}}">Show</a> <a href="/edit/{{x.id}}">Edit</a> <a href="/delete/{{x.id}}">Delete</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+        <a href="/create">Add a new user</a>
+    </div>
+</body>
+</html>

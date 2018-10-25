@@ -1,0 +1,21 @@
+body {
+    padding-top: 100px;
+}
+#container {
+    margin: 0 auto;
+    width: 970px;
+}
+h2 {
+    margin: 7px;
+}
+table {
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+td, th {
+    border: 1px solid #dddddd;
+    padding: 8px;
+}
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
